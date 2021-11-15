@@ -1,16 +1,16 @@
 import {TinyEmitter} from "tiny-emitter";
 import Postmate from "postmate";
 
-export default class LiveSDK extends TinyEmitter {
+export default class LiveWebSDK extends TinyEmitter {
 
-    entryUrl = "//live.edusoho.com";
+    entryUrl: string = "//live.edusoho.com";
 
-    child = undefined;
+    child: any = undefined;
 
     /**
      * @param options.entryUrl
      */
-    constructor(options) {
+    constructor(options: any) {
         super();
         if (options.entryUrl) {
             this.entryUrl = options.entryUrl;
@@ -27,7 +27,7 @@ export default class LiveSDK extends TinyEmitter {
      * @param {String} options.floatButtons 课堂浮动按钮
      * @param {String} options.tabs 课堂标签
      */
-    async connect(options) {
+    async connect(options: any): Promise<void> {
         console.log("SDK parent, enter");
         return new Promise((resolve, reject) => {
             const url = this.entryUrl + "/h5/room/" + options.roomId + "/enter?token=" + options.token;
@@ -57,9 +57,9 @@ export default class LiveSDK extends TinyEmitter {
         });
     }
 
-    notify(event, payload) {
+    notify(event: string, payload: any) {
         if (!this.child) {
-            return;
+            return ;
         }
         this.child.call(event, payload);
     }

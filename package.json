@@ -1,26 +1,43 @@
 {
-  "name": "livecloud-js-sdk",
+  "name": "@codeages/livecloud-web-sdk",
   "version": "1.0.0",
-  "main": "dist/live-sdk.js",
-  "module": "src/index.js",
+  "description": "EduSoho 大班课直播 Web SDK",
+  "author": "Codeages Team",
+  "main": "dist/livecloud-web-sdk.cjs.js",
+  "module": "dist/livecloud-web-sdk.esm.js",
+  "browser": "dist/livecloud-web-sdk.umd.js",
+  "typings": "dist/livecloud-web-sdk.d.ts",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeages/livecloud-web-sdk.git"
+  },
   "scripts": {
-    "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
-    "babel-loader": "^8.2.3",
-    "copy-webpack-plugin": "^9.1.0",
-    "webpack": "^5.64.0",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0",
-    "webpack-merge": "^5.8.0"
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/postmate": "^1.5.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.60.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@babel/runtime": "^7.16.3",
     "postmate": "^1.5.2",
-    "tiny-emitter": "^2.1.0"
+    "tiny-emitter": "^2.1.0",
+    "tslib": "^2.3.1"
   }
 }
