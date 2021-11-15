@@ -23,10 +23,10 @@
 <body>
 <div id="live-sdk-container"></div>
 </body>
-<script src="live-sdk.js"></script>
+<script src="../dist/livecloud-web-sdk.umd.js"></script>
 <script>
     async function initSdk() {
-        const sdk = new LiveSDK({
+        const sdk = new LiveWebSDK({
             // entryUrl: '//live-dev.edusoho.cn',
             entryUrl: '//127.0.0.1:8083',
         });

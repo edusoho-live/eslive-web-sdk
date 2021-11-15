@@ -5,6 +5,7 @@ import del from 'rollup-plugin-delete';
 import typescript from '@rollup/plugin-typescript';
 import { babel } from '@rollup/plugin-babel';
 import dts from "rollup-plugin-dts";
+import replace from 'rollup-plugin-replace';
 
 export default [
     // browser-friendly UMD build
@@ -33,7 +34,10 @@ export default [
                 plugins: [
                     ["@babel/plugin-transform-runtime"]
                 ]
-            })
+            }),
+            replace({
+                'process.env.NODE_ENV': JSON.stringify( 'production' )
+            }),
         ]
     },
 
