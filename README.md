@@ -24,11 +24,15 @@ async function initSdk() {
 
     sdk.on("Goods.Buy", (goodsNo) => {
         console.log("Event[Goods.Buy] goods no ", goodsNo);
+        // 购买支付流程成功后 调用 notify
+        sdk.notify("Goods.Paid", {no: "G1001", goto: "//www.edusoho.com"});
+    });
 
-        // 模拟支付完成后，回调
-        setTimeout(() => {
-            sdk.notify("Goods.Paid", {no: "G1001", goto: "//www.edusoho.com"});
-        }, 3000);
+    sdk.on("Goods.Goto", (goodsNo) => {
+        console.log("Event[Goods.Goto] goods no ", goodsNo);
+        //const goto = generateGoodsGotoUrl(goodsNo);
+        const goto = "//github.com/?goodsNo=" + goodsNo;
+        window.location.href = goto;
     });
 
     await sdk.connect({
