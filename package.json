@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "publish": "npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
