@@ -1,5 +1,7 @@
 # EduSoho 大班课直播 Web SDK
 
+[![Npm package](https://img.shields.io/npm/v/@codeages/livecloud-web-sdk)](https://www.npmjs.com/package/@codeages/livecloud-web-sdk)
+
 ## 快速开始
 
 ### 安装
