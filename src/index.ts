@@ -1,6 +1,44 @@
 import {TinyEmitter} from "tiny-emitter";
 import Postmate from "postmate";
 
+interface ConstructorOptions {
+    entryUrl: string;
+}
+
+interface FloatButton {
+    /**
+     * 浮动按钮编码，系统预制的编码有： goods (商品购买)
+     */
+    code: string;
+    icon?: string;
+    name?: string;
+    [key: string]: unknown;
+}
+
+interface ConnectOptions {
+    /**
+     * 页面渲染的容器ID
+     */
+    container: string
+    /**
+     * 课堂ID
+     */
+    roomId: number;
+
+    /**
+     * 课堂Token
+     */
+    token: string;
+    /**
+     * 课堂浮动按钮配置
+     */
+    floatButtons: FloatButton[];
+    /**
+     * 课堂标签页配置
+     */
+    tabs: any[];
+}
+
 export default class LiveWebSDK extends TinyEmitter {
 
     entryUrl: string = "//live.edusoho.com";
@@ -10,7 +48,7 @@ export default class LiveWebSDK extends TinyEmitter {
     /**
      * @param options.entryUrl
      */
-    constructor(options: any) {
+    constructor(options: ConstructorOptions) {
         super();
         if (options.entryUrl) {
             this.entryUrl = options.entryUrl;
@@ -18,16 +56,7 @@ export default class LiveWebSDK extends TinyEmitter {
         this.insertCss();
     }
 
-    /**
-     * 连接直播课堂
-     *
-     * @param {Number} options.roomId 课堂ID
-     * @param {String} options.token 课堂登录Token
-     * @param {String} options.container 页面渲染根节点
-     * @param {String} options.floatButtons 课堂浮动按钮
-     * @param {String} options.tabs 课堂标签
-     */
-    async connect(options: any): Promise<void> {
+    async connect(options: ConnectOptions): Promise<void> {
         console.log("SDK parent, enter");
         return new Promise((resolve, reject) => {
             const url = this.entryUrl + "/h5/room/" + options.roomId + "/enter?token=" + options.token;
@@ -57,7 +86,7 @@ export default class LiveWebSDK extends TinyEmitter {
         });
     }
 
-    notify(event: string, payload: any) {
+    notify(event: string, payload: unknown) {
         if (!this.child) {
             return ;
         }
