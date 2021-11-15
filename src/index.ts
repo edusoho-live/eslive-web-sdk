@@ -72,6 +72,7 @@ export default class LiveWebSDK extends TinyEmitter {
                 this.child = child;
 
                 child.on("Goods.Buy", goodsNo => this.emit("Goods.Buy", goodsNo));
+                child.on("Goods.Goto", goodsNo => this.emit("Goods.Goto", goodsNo));
 
                 if (options.floatButtons) {
                     child.call("setFloatButtons", options.floatButtons)

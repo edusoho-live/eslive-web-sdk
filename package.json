@@ -1,6 +1,6 @@
 {
   "name": "@codeages/livecloud-web-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "EduSoho 大班课直播 Web SDK",
   "author": "Codeages Team",
   "main": "dist/livecloud-web-sdk.cjs.js",
