@@ -1,6 +1,6 @@
 {
   "name": "@codeages/livecloud-web-sdk",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "EduSoho 大班课直播 Web SDK",
   "author": "Codeages Team",
   "main": "dist/livecloud-web-sdk.cjs.js",
@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "publish": "rollup -c && npm publish --access public"
+    "publish-npm": "rollup -c && npm publish --access public"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
