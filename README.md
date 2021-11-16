@@ -22,12 +22,21 @@ async function initSdk() {
         entryUrl: '//live-dev.edusoho.cn', // 仅测试环境时需传入此参数，正式环境不需要此参数
     });
 
+    // 监听屏幕方向变更事件
+    // mode 的值有 portrait (竖屏)、landscape (横屏)、fake-landscape (假横屏，通过CSS transform 旋转)
+    // CSS: .fake-landscape {transform-origin: top left; transform: rotate(90deg) translate(0, -100vmin);}
+    sdk.on("ScreenMode", (mode) => {
+        console.log("Event[ScreenMode]", mode);
+    });
+
+    // 监听点击购买事件
     sdk.on("Goods.Buy", (goodsNo) => {
         console.log("Event[Goods.Buy] goods no ", goodsNo);
         // 购买支付流程成功后 调用 notify
         sdk.notify("Goods.Paid", {no: "G1001", goto: "//www.edusoho.com"});
     });
 
+    // 监听点击购买成功后的去学习事件
     sdk.on("Goods.Goto", (goodsNo) => {
         console.log("Event[Goods.Goto] goods no ", goodsNo);
         //const goto = generateGoodsGotoUrl(goodsNo);

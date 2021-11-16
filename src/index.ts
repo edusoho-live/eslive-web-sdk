@@ -71,6 +71,7 @@ export default class LiveWebSDK extends TinyEmitter {
             handshake.then(async child => {
                 this.child = child;
 
+                child.on("ScreenMode", mode => this.emit("ScreenMode", mode));
                 child.on("Goods.Buy", goodsNo => this.emit("Goods.Buy", goodsNo));
                 child.on("Goods.Goto", goodsNo => this.emit("Goods.Goto", goodsNo));
 
