@@ -27,8 +27,8 @@
 <script>
     async function initSdk() {
         const sdk = new LiveWebSDK({
-            entryUrl: '//live-dev.edusoho.cn',
-            // entryUrl: '//127.0.0.1:8083',
+            // entryUrl: '//live-dev.edusoho.cn',
+            entryUrl: '//127.0.0.1:8083',
         });
 
         // 监听屏幕方向变更事件
@@ -53,7 +53,7 @@
 
         await sdk.connect({
             roomId: 23000,
-            token: "eyJraWQiOiJmbHZfc2VsZl9hbGl5dW4iLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjc1MTA3MDM1ODkwNjgzMywicm9sZSI6InZpZXdlciIsImlzcyI6ImxpdmUgY2xpZW50IGFwaSIsIm5hbWUiOiJoZWxsbyIsInJpZCI6MjMwMDAsInR5cGUiOiJsYW5kc2NhcGUiLCJleHAiOjE2Mzc3NzIwMDF9.dKto_pYIJNFH66M5RskJdWYxhUGqI1OcbostqrWNpFI",
+            token: "eyJraWQiOiJmbHZfc2VsZl9hbGl5dW4iLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjUyNjUwOTQzMzc0Njc5Mywicm9sZSI6InZpZXdlciIsImlzcyI6ImxpdmUgY2xpZW50IGFwaSIsIm5hbWUiOiJsaWxlaSIsInJpZCI6MjMwMDAsInR5cGUiOiJsYW5kc2NhcGUiLCJleHAiOjE2Mzc4OTQ3Nzl9.YRB5-BMFIpOCtkuAC2bsPo6R5ZfgRHe64hwOGGtVM8c",
             container: "live-sdk-container",
             floatButtons: [
                 {
@@ -65,7 +65,9 @@
                             price: 12350, // 单位分
                             picture: "//iph.href.lu/400x225?text=%E8%AF%BE%E7%A8%8B%E5%B0%81%E9%9D%A2%E5%9B%BE&fg=ffffff&bg=f44336",
                             description: "这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>。",
-                            paid: false,
+                            paid: false, // 是否已支付，默认 false，未支付
+                            goto: true, // 是否显示 goto 按钮，默认 true，显示
+                            gotoText: '去查看' // 跳转按钮的文案， 默认 '去查看'
                         }
                     ]
                 }

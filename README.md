@@ -51,8 +51,23 @@ async function initSdk() {
             {
                 code: "goods",
                 goods: [
-                    {no: "G1001", name: "测试商品1", price: 12350, picture: "//test-1.jpg", description: "这个商品的描述<b>支持HTML</b>", paid: true},
-                    {no: "G1002", name: "测试商品2", price: 12350, picture: "//test-2.jpg", description: "这个商品的描述<b>支持HTML</b>"}
+                    {
+                        no: "G1001", 
+                        name: "测试商品1", 
+                        price: 12350, 
+                        picture: "//test-1.jpg", 
+                        description: "这个商品的描述<b>支持HTML</b>", 
+                        paid: false, // 是否已支付，默认 false，未支付
+                        goto: true, // 是否显示 goto 按钮，默认 true，显示
+                        gotoText: '去查看' // 跳转按钮的文案， 默认 '去查看'
+                    },
+                    {
+                        no: "G1002", 
+                        name: "测试商品2", 
+                        price: 12350, 
+                        picture: "//test-2.jpg", 
+                        description: "这个商品的描述<b>支持HTML</b>"
+                    }
                 ]
             }
         ],
