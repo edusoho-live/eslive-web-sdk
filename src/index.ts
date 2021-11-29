@@ -2,7 +2,7 @@ import {TinyEmitter} from "tiny-emitter";
 import Postmate from "postmate";
 
 interface ConstructorOptions {
-    entryUrl: string;
+    entryUrl?: string;
 }
 
 interface FloatButton {
