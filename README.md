@@ -58,6 +58,7 @@ async function initSdk() {
                         picture: "//test-1.jpg", 
                         // 商品描述支持富文本编辑器 ckeditor 4 / ckeditor 5 / tinymce 的默认样式
                         // 以 ckeditor 5 为例，传入<div class="ck-content”>....这里是商品介绍....</div>
+                        // 其他自定义样式，传入 <style></style> 标签即可
                         description: "这个商品的描述<b>支持HTML</b>",  
                         paid: false, // 是否已支付，默认 false，未支付
                         goto: true, // 是否显示 goto 按钮，默认 true，显示
