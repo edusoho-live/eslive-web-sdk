@@ -74,8 +74,56 @@ async function initSdk() {
                 ]
             }
         ],
+        tabs: [
+            {code: "desc", name: "介绍", content: "这里是介绍的具体内容描述<b>支持HTML</b>"},
+            {code: "chat", name: "互动"},
+            {code: "rank", name: "排行榜", dataUrl: "//data-url"},
+        ]
     });
 }
 
 initSdk();
+```
+
+### 排行榜数据格式
+```json
+{
+    "invite":{
+        "uid":444,
+        "uname":"mememem",
+        "avatar":"https://img.yzcdn.cn/vant/cat.jpeg",
+        "link":"https://share-url",
+        "image":"https://share-image-url.png"
+    },
+    "ranks":[
+        {
+            "seq":1,
+            "uid":111,
+            "uname":"第一",
+            "avatar":"https://img.yzcdn.cn/vant/cat.jpeg",
+            "invited":33
+        },
+        {
+            "seq":2,
+            "uid":123,
+            "uname":"第二",
+            "avatar":"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+            "invited":30
+        },
+        {
+            "seq":3,
+            "uid":333,
+            "uname":"第三三",
+            "avatar":"https://img.yzcdn.cn/vant/cat.jpeg",
+            "invited":20
+        },
+        {
+            "seq":4,
+            "uid":13,
+            "uname":"四",
+            "avatar":"",
+            "invited":10
+        }
+    ]
+}
 ```
