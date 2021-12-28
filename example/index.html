@@ -68,12 +68,22 @@
                             paid: false, // 是否已支付，默认 false，未支付
                             goto: true, // 是否显示 goto 按钮，默认 true，显示
                             gotoText: '去查看' // 跳转按钮的文案， 默认 '去查看'
-                        }
+                        },
+                        {
+                            no: "G1002",
+                            name: "测试商品2",
+                            price: 32350, // 单位分
+                            picture: "//iph.href.lu/400x225?text=%E8%AF%BE%E7%A8%8B%E5%B0%81%E9%9D%A2%E5%9B%BE&fg=ffffff&bg=f44336",
+                            description: "这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>，这个商品的描述<b>支持HTML</b>。",
+                            paid: true, // 是否已支付，默认 false，未支付
+                            goto: true, // 是否显示 goto 按钮，默认 true，显示
+                            gotoText: '去查看' // 跳转按钮的文案， 默认 '去查看'
+                        },
                     ]
                 }
             ],
             tabs: [
-                {code: "desc", name: "介绍", content: "这里是介绍的具体内容描述<b>支持HTML</b>"},
+                {code: "desc", name: "介绍", content: {title: "标题", time: "2021-11-11 11:11", content: "这里是介绍的具体内容描述<b>支持HTML</b>"}},
                 {code: "chat", name: "互动"},
                 {code: "rank", name: "排行榜", dataUrl: "//localhost:8083/h5/data.json"},
             ]

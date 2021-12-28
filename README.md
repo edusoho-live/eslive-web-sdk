@@ -75,7 +75,7 @@ async function initSdk() {
             }
         ],
         tabs: [
-            {code: "desc", name: "介绍", content: "这里是介绍的具体内容描述<b>支持HTML</b>"},
+            {code: "desc", name: "介绍", content: {title: "标题标题", time: "2021-11-11 11:11", content: "这里是介绍的具体内容描述<b>支持HTML</b>"}},
             {code: "chat", name: "互动"},
             {code: "rank", name: "排行榜", dataUrl: "//data-url"},
         ]
