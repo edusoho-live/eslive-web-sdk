@@ -37,6 +37,10 @@ interface ConnectOptions {
      * 课堂标签页配置
      */
     tabs: any[];
+    /**
+     * 是否进入回放
+     */
+    replay: boolean;
 }
 
 export default class LiveWebSDK extends TinyEmitter {
@@ -59,7 +63,7 @@ export default class LiveWebSDK extends TinyEmitter {
     async connect(options: ConnectOptions): Promise<void> {
         console.log("SDK parent, enter");
         return new Promise((resolve, reject) => {
-            const url = this.entryUrl + "/h5/room/" + options.roomId + "/enter?token=" + options.token;
+            const url = this.entryUrl + "/h5/" + (options.replay ? 'replay/' : 'room/') + options.roomId + "/enter?token=" + options.token;
 
             const handshake = new Postmate({
                 container: document.getElementById(options.container),
