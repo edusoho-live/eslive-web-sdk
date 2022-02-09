@@ -41,6 +41,10 @@ interface ConnectOptions {
      * 是否进入回放
      */
     replay: boolean;
+    /**
+     * 预告片
+     */
+    trailer: any;
 }
 
 export default class LiveWebSDK extends TinyEmitter {
@@ -85,6 +89,10 @@ export default class LiveWebSDK extends TinyEmitter {
 
                 if (options.tabs) {
                     child.call("setTabs", options.tabs)
+                }
+
+                if (options.trailer) {
+                    child.call("setTrailer", options.trailer)
                 }
 
                 resolve();
