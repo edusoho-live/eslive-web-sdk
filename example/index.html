@@ -38,6 +38,10 @@
             console.log("Event[ScreenMode]", mode);
         });
 
+        sdk.on("Reload", () => {
+            window.location.reload();
+        });
+
         sdk.on("Goods.Buy", (goodsNo) => {
             console.log("Event[Goods.Buy] goods no ", goodsNo);
             // 购买支付流程成功后 调用 notify

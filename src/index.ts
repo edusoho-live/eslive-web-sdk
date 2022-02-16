@@ -82,6 +82,7 @@ export default class LiveWebSDK extends TinyEmitter {
                 child.on("ScreenMode", mode => this.emit("ScreenMode", mode));
                 child.on("Goods.Buy", goodsNo => this.emit("Goods.Buy", goodsNo));
                 child.on("Goods.Goto", goodsNo => this.emit("Goods.Goto", goodsNo));
+                child.on("Reload", () => this.emit("Reload"));
 
                 if (options.floatButtons) {
                     child.call("setFloatButtons", options.floatButtons)
