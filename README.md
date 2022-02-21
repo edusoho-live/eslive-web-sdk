@@ -29,6 +29,10 @@ async function initSdk() {
         console.log("Event[ScreenMode]", mode);
     });
 
+    sdk.on("Reload", () => {
+        window.location.reload();
+    });
+    
     // 监听点击购买事件
     sdk.on("Goods.Buy", (goodsNo) => {
         console.log("Event[Goods.Buy] goods no ", goodsNo);
@@ -96,8 +100,7 @@ initSdk();
         "uid":444,
         "uname":"mememem",
         "avatar":"https://img.yzcdn.cn/vant/cat.jpeg",
-        "link":"https://share-url",
-        "image":"https://share-image-url.png"
+        "invited":2
     },
     "ranks":[
         {
