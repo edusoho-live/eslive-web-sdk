@@ -65,7 +65,7 @@ export default class LiveWebSDK extends TinyEmitter {
     }
 
     async connect(options: ConnectOptions): Promise<void> {
-        console.log("SDK parent, enter");
+        console.log("SDK parent, enter [1.0.7]");
         return new Promise((resolve, reject) => {
             const url = this.entryUrl + "/h5/" + (options.replay ? 'replay/' : 'room/') + options.roomId + "/enter?token=" + options.token;
 
