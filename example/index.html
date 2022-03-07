@@ -42,10 +42,14 @@
             window.location.reload();
         });
 
+        sdk.on("Tab.Switch", (tab) => {
+            console.log("Switch Tab To", tab);
+        });
+
         sdk.on("Goods.Buy", (goodsNo) => {
             console.log("Event[Goods.Buy] goods no ", goodsNo);
             // 购买支付流程成功后 调用 notify
-            sdk.notify("Goods.Paid", {no: "G1001", goto: "//www.edusoho.com"});
+            sdk.notify("Goods.Paid", {no: goodsNo, goto: "//www.edusoho.com"});
         });
 
         sdk.on("Goods.Goto", (goodsNo) => {

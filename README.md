@@ -32,6 +32,10 @@ async function initSdk() {
     sdk.on("Reload", () => {
         window.location.reload();
     });
+
+    sdk.on("Tab.Switch", (tab) => {
+        console.log("Switch Tab To", tab);
+    });
     
     // 监听点击购买事件
     sdk.on("Goods.Buy", (goodsNo) => {
