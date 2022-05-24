@@ -47,7 +47,7 @@ interface ConnectOptions {
     trailer: any;
 }
 
-export default class LiveWebSDK extends TinyEmitter {
+export default class ESLiveWebSDK extends TinyEmitter {
 
     entryUrl: string = "//live.edusoho.com";
 
