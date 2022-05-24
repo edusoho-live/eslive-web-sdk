@@ -1,5 +1,5 @@
 {
-  "name": "@codeages/livecloud-web-sdk",
+  "name": "@edusoho-live/eslive-web-sdk",
   "version": "1.0.8",
   "description": "EduSoho 大班课直播 Web SDK",
   "author": "Codeages Team",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codeages/livecloud-web-sdk.git"
+    "url": "https://github.com/edusoho-live/eslive-web-sdk.git"
   },
   "scripts": {
     "dev": "rollup -c -w",
