@@ -12,7 +12,7 @@ export default [
     {
         input: 'src/index.ts',
         output: {
-            name: 'LiveWebSDK',
+            name: 'ESLiveWebSDK',
             file: pkg.browser,
             format: 'umd',
             sourcemap: true,
