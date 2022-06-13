@@ -1,6 +1,6 @@
 {
   "name": "@edusoho-live/eslive-web-sdk",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "EduSoho 大班课直播 Web SDK",
   "author": "Codeages Team",
   "main": "dist/eslive-web-sdk.cjs.js",

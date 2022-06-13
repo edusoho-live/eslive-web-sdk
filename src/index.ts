@@ -17,11 +17,6 @@ interface ConnectOptions {
      */
     container: string
     /**
-     * 课堂ID
-     */
-    roomId: number;
-
-    /**
      * 课堂进入地址
      */
     url: string;
