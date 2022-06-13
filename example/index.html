@@ -26,10 +26,7 @@
 <script src="../dist/eslive-web-sdk.umd.js"></script>
 <script>
     async function initSdk() {
-        const sdk = new ESLiveWebSDK({
-            entryUrl: '//live-dev.edusoho.cn',
-            // entryUrl: '//127.0.0.1:8083',
-        });
+        const sdk = new ESLiveWebSDK();
 
         // 监听屏幕方向变更事件
         // mode 的值有 portrait (竖屏)、landscape (横屏)、fake-landscape (假横屏，通过CSS transform 旋转)
@@ -62,7 +59,7 @@
         await sdk.connect({
             roomId: 23000,
             replay: false,
-            token: "eyJraWQiOiJmbHZfc2VsZl9hbGl5dW4iLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjUyNjUwOTQzMzc0Njc5Mywicm9sZSI6InZpZXdlciIsImlzcyI6ImxpdmUgY2xpZW50IGFwaSIsIm5hbWUiOiJsaWxlaSIsInJpZCI6MjMwMDAsInR5cGUiOiJsYW5kc2NhcGUiLCJleHAiOjE2Mzc4OTQ3Nzl9.YRB5-BMFIpOCtkuAC2bsPo6R5ZfgRHe64hwOGGtVM8c",
+            url: "<room enter url>",
             container: "live-sdk-container",
             floatButtons: [
                 {

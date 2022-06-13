@@ -1,10 +1,6 @@
 import {TinyEmitter} from "tiny-emitter";
 import Postmate from "postmate";
 
-interface ConstructorOptions {
-    entryUrl?: string;
-}
-
 interface FloatButton {
     /**
      * 浮动按钮编码，系统预制的编码有： goods (商品购买)
@@ -26,52 +22,44 @@ interface ConnectOptions {
     roomId: number;
 
     /**
-     * 课堂Token
+     * 课堂进入地址
      */
-    token: string;
+    url: string;
     /**
      * 课堂浮动按钮配置
      */
-    floatButtons: FloatButton[];
+    floatButtons?: FloatButton[];
     /**
      * 课堂标签页配置
      */
-    tabs: any[];
-    /**
-     * 是否进入回放
-     */
-    replay: boolean;
+    tabs?: any[];
     /**
      * 预告片
      */
-    trailer: any;
+    trailer?: any;
 }
 
 export default class ESLiveWebSDK extends TinyEmitter {
 
-    entryUrl: string = "//live.edusoho.com";
-
     child: any = undefined;
 
-    /**
-     * @param options.entryUrl
-     */
-    constructor(options: ConstructorOptions) {
+    constructor() {
         super();
-        if (options.entryUrl) {
-            this.entryUrl = options.entryUrl;
-        }
         this.insertCss();
     }
 
     async connect(options: ConnectOptions): Promise<void> {
-        console.log("SDK parent, enter [1.0.8]");
         return new Promise((resolve, reject) => {
-            const url = this.entryUrl + "/h5/" + (options.replay ? 'replay/' : 'room/') + options.roomId + "/enter?token=" + options.token;
+
+            const container = document.getElementById(options.container);
+            if (!container) {
+                reject(new Error(`container id '${options.container}' is not exist in page html`));
+                return ;
+            }
 
             const handshake = new Postmate({
-                container: document.getElementById(options.container),
-                url: url,
+                container: container,
+                url: options.url,
                 name: 'live-sdk-iframe',
                 classListArray: ["live-sdk-iframe-style"]
             });
