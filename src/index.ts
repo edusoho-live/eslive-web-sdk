@@ -32,6 +32,10 @@ interface ConnectOptions {
      * 预告片
      */
     trailer?: any;
+    /**
+     * 水印
+     */
+    watermark?: string;
 }
 
 export default class ESLiveWebSDK extends TinyEmitter {
@@ -78,6 +82,10 @@ export default class ESLiveWebSDK extends TinyEmitter {
 
                 if (options.trailer) {
                     child.call("setTrailer", options.trailer)
+                }
+
+                if (options.watermark) {
+                    child.call("setWatermark", options.watermark)
                 }
 
                 resolve();
