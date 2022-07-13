@@ -42,11 +42,6 @@ export default class ESLiveWebSDK extends TinyEmitter {
 
     child: any = undefined;
 
-    constructor() {
-        super();
-        this.insertCss();
-    }
-
     async connect(options: ConnectOptions): Promise<void> {
         return new Promise((resolve, reject) => {
 
@@ -59,9 +54,23 @@ export default class ESLiveWebSDK extends TinyEmitter {
             const handshake = new Postmate({
                 container: container,
                 url: options.url,
-                name: 'live-sdk-iframe',
-                classListArray: ["live-sdk-iframe-style"]
+                name: 'live-sdk-iframe'
             });
+
+            const frame = container.getElementsByTagName("iframe")[0];
+
+            frame.allowFullscreen=true;
+            frame.allow = "microphone; camera; screen-wake-lock; display-capture";
+            frame.scrolling = "no";
+            frame.style.position = "absolute";
+            frame.style.left = "0";
+            frame.style.top = "0";
+            frame.style.right = "0";
+            frame.style.bottom = "0";
+            frame.style.height = "100%";
+            frame.style.width = "100%";
+            frame.style.border = "0px";
+            frame.style.overflow = "hidden";
 
             handshake.then(async child => {
                 this.child = child;
@@ -98,13 +107,5 @@ export default class ESLiveWebSDK extends TinyEmitter {
             return ;
         }
         this.child.call(event, payload);
-    }
-
-    insertCss() {
-        const styles = '.live-sdk-iframe-style {border: none;width: 100%;height: 100%;}';
-        const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
-        styleSheet.innerText = styles;
-        document.head.appendChild(styleSheet);
     }
 }
