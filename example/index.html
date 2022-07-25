@@ -12,7 +12,11 @@
     <title>LiveSDK Example</title>
 </head>
 <body style="width: 100%;height: 100%;overflow: hidden;">
-  <div id="eslive-container" style="position: absolute;left: 0;right: 0;top: 0;bottom: 0;"></div>
+  <div style="position: absolute;left: 0;right: 0;top: 0px;height: 30px;">
+      <button id="play">Play</button> |
+      <button id="pause">Pause</button>
+  </div>
+  <div id="eslive-container" style="position: absolute;left: 0;right: 0;top: 30px;bottom: 0;"></div>
 </body>
 <script src="../dist/eslive-web-sdk.umd.js"></script>
 <script>
@@ -88,6 +92,15 @@
             },
             watermark: "watermark-test",
         });
+
+        document.getElementById("play").addEventListener("click", () => {
+            sdk.play();
+        });
+
+        document.getElementById("pause").addEventListener("click", () => {
+            sdk.pause();
+        });
+
     }
     initSdk();
 </script>

@@ -104,6 +104,14 @@ export default class ESLiveWebSDK extends TinyEmitter {
         });
     }
 
+    pause(): void {
+        this.notify("pause", null);
+    }
+
+    play(): void {
+        this.notify("play", null);
+    }
+
     notify(event: string, payload: unknown) {
         if (!this.child) {
             return ;
