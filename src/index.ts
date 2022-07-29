@@ -43,7 +43,7 @@ export default class ESLiveWebSDK extends TinyEmitter {
     child: any = undefined;
 
     async connect(options: ConnectOptions): Promise<void> {
-        console.log("ESLiveWebSDK v1.2.3");
+        console.log("ESLiveWebSDK v1.3.0");
 
         return new Promise((resolve, reject) => {
 
