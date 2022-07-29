@@ -55,9 +55,16 @@
             console.log("watching", rate);
         });
 
+        sdk.on("LiveStart", () => {
+            console.log("LiveStart");
+        });
+
+        sdk.on("LiveFinished", () => {
+            console.log("LiveFinished");
+        });
+
         await sdk.connect({
-            // url: "<room or replay enter url>",
-            url: "https://live-dev.edusoho.cn/h5/room/26414/enter?token=eyJraWQiOiJmbHZfc2VsZl9hbGl5dW4iLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjkwMDAwMDAwMDAwMDAwMTQsInJvbGUiOiJzdXBwb3J0ZXIiLCJpc3MiOiJsaXZlIGNsaWVudCBhcGkiLCJuYW1lIjoi5oqA5pyv5pSv5oyBLTE0IiwicmlkIjoyNjQxNCwidHlwZSI6ImxhbmRzY2FwZSIsImV4cCI6MTY1OTE1MTgxM30.z6bMNrjSmimUlXadeYaX6sEGDt2I6rG44tnhvzoWPZM",
+            url: "<room or replay enter url>",
             container: "eslive-container",
             floatButtons: [
                 {
