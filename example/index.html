@@ -51,17 +51,33 @@
             window.location.href = goto;
         });
 
-        sdk.on("Watching", (rate) => {
-            console.log("watching", rate);
+        sdk.on("watch-time-update", (rate) => {
+            console.log("watch-time-update", rate);
         });
 
-        sdk.on("LiveStart", () => {
-            console.log("LiveStart");
+        sdk.on("watch-start", () => {
+            console.log("watch-start");
         });
 
-        sdk.on("LiveFinished", () => {
-            console.log("LiveFinished");
+        sdk.on("watch-ended", () => {
+            console.log("watch-ended");
         });
+
+        sdk.on("click", () => {
+            console.log("click");
+        })
+
+        sdk.on("fullscreen", (full) => {
+            console.log("fullscreen", full);
+        });
+
+        sdk.on("play-click", () => {
+            console.log("play-click");
+        })
+
+        sdk.on("pause-click", () => {
+            console.log("pause-click");
+        })
 
         await sdk.connect({
             url: "<room or replay enter url>",

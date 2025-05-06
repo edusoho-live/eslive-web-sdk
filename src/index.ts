@@ -43,7 +43,7 @@ export default class ESLiveWebSDK extends TinyEmitter {
     child: any = undefined;
 
     async connect(options: ConnectOptions): Promise<void> {
-        console.log("ESLiveWebSDK v1.3.2");
+        console.log("ESLiveWebSDK v1.3.3");
 
         return new Promise((resolve, reject) => {
 
@@ -85,6 +85,10 @@ export default class ESLiveWebSDK extends TinyEmitter {
                 child.on("watch-time-update", rate => this.emit("watch-time-update", rate));
                 child.on("watch-start", () => this.emit("watch-start"));
                 child.on("watch-ended", () => this.emit("watch-ended"));
+                child.on("click", () => this.emit("click"));
+                child.on("fullscreen", full => this.emit("fullscreen", full));
+                child.on("play-click", () => this.emit("play-click"));
+                child.on("pause-click", () => this.emit("pause-click"));
 
                 if (options.floatButtons) {
                     child.call("setFloatButtons", options.floatButtons)
