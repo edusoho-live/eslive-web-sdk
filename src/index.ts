@@ -77,18 +77,18 @@ export default class ESLiveWebSDK extends TinyEmitter {
             handshake.then(async child => {
                 this.child = child;
 
-                child.on("ScreenMode", mode => this.emit("ScreenMode", mode));
-                child.on("Goods.Buy", goodsNo => this.emit("Goods.Buy", goodsNo));
-                child.on("Goods.Goto", goodsNo => this.emit("Goods.Goto", goodsNo));
-                child.on("Reload", () => this.emit("Reload"));
-                child.on("Tab.Switch", tab => this.emit("Tab.Switch", tab));
+                child.on("screen-mode", mode => this.emit("screen-mode", mode));
+                child.on("goods-buy", goodsNo => this.emit("goods-buy", goodsNo));
+                child.on("goods-goto", goodsNo => this.emit("goods-goto", goodsNo));
+                child.on("reload", () => this.emit("reload"));
+                child.on("tab-switch", tab => this.emit("tab-switch", tab));
                 child.on("watch-time-update", rate => this.emit("watch-time-update", rate));
                 child.on("watch-start", () => this.emit("watch-start"));
                 child.on("watch-ended", () => this.emit("watch-ended"));
                 child.on("click", () => this.emit("click"));
                 child.on("fullscreen", full => this.emit("fullscreen", full));
-                child.on("play-click", () => this.emit("play-click"));
-                child.on("pause-click", () => this.emit("pause-click"));
+                child.on("play", () => this.emit("play"));
+                child.on("pause", () => this.emit("pause"));
 
                 if (options.floatButtons) {
                     child.call("setFloatButtons", options.floatButtons)
