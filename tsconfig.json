@@ -1,27 +1,25 @@
 {
-    "include": ["src/**/*.ts", "src/**/*.tsx"],
-    "exclude": ["node_modules", "dist"],
-    "compilerOptions": {
-        "target": "es2016",
-        "module": "esnext",
-        "lib": ["esnext", "dom"],
-        "types": [],
-        "allowJs": false,
-        "declaration": true,
-        "declarationDir": "types",
-        "sourceMap": true,
-        "outDir": "dist",
-        "rootDir": "src",
-        "baseUrl": "src",
-        "removeComments": false,
-        "strict": true,
-        "noUnusedLocals": true,
-        "useDefineForClassFields": false,
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
-    }
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src"]
 }
